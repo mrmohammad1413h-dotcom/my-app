@@ -57,7 +57,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; font-size: 112.5%; } /* تكبير الخط قليلاً بطلب صاحب المشروع */
 body {
   margin: 0;
   background: var(--paper);
