@@ -17,8 +17,8 @@
   function srcHtml(src) {
     if (!src) return "";
     var s = SOURCES[src.key];
-    var url = s.url + (src.page ? "?page=" + src.page : "");
-    return '<div class="pop-src">المصدر: <a href="' + url + '" target="_blank" rel="noopener">' + s.title + "</a>" +
+    var url = s.link.replace("{p}", src.page);
+    return '<div class="pop-src">المصدر: <a href="' + url + '" target="_blank" rel="noopener">' + s.title + "، " + s.short + arDigits(src.page) + "</a>" +
       (src.note ? "<br>" + src.note : "") + "</div>";
   }
 
