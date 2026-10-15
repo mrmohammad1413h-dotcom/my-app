@@ -22,10 +22,10 @@ window.SOURCES = {
 
 // الفئات: journey = رحلة الشيخ ومحطات حياته، battle = غزوة أو وقعة، join = دخول بلدة في الدعوة، state = حدث في الدولة، scholars = خبر من أخبار الأئمة بعد الشيخ
 window.CATEGORIES = {
-  journey: { label: "رحلة الشيخ وحياته", color: "#4f5d2f" },
-  battle:  { label: "غزوات ووقائع",      color: "#9e2b25" },
-  join:    { label: "دخول البلدان",       color: "#b8862f" },
-  state:   { label: "أحداث الدولة",       color: "#5a3a22" },
+  journey: { label: "رحلة الشيخ وحياته", color: "#4c5a2c" },
+  battle:  { label: "غزوات ووقائع",      color: "#a3301f" },
+  join:    { label: "دخول البلدان",       color: "#b5713a" },
+  state:   { label: "أحداث الدولة",       color: "#3a2616" },
   scholars:{ label: "أخبار الأئمة",       color: "#2f5d6b" }
 };
 
