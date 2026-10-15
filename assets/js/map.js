@@ -58,7 +58,9 @@
   });
 
   // الحالة
-  var state = { year: 1206, cats: { journey: true, battle: true, join: true, state: true } };
+  var MAX = 1234, MIN = 1115;
+  var state = { year: MAX, cats: {} };
+  Object.keys(CATS).forEach(function (k) { state.cats[k] = true; });
   var yearInput = document.getElementById("year");
   var yearOut = document.getElementById("year-out");
   var list = document.getElementById("event-list");
@@ -121,11 +123,11 @@
   function stop() { if (timer) { clearInterval(timer); timer = null; playBtn.textContent = "▶"; playBtn.setAttribute("aria-label", "تشغيل"); } }
   playBtn.addEventListener("click", function () {
     if (timer) return stop();
-    if (state.year >= 1206) setYear(1115);
+    if (state.year >= MAX) setYear(MIN);
     playBtn.textContent = "❚❚";
     playBtn.setAttribute("aria-label", "إيقاف");
     timer = setInterval(function () {
-      if (state.year >= 1206) return stop();
+      if (state.year >= MAX) return stop();
       setYear(state.year + 1);
       var current = EVENTS.filter(function (e) { return e.year === state.year && state.cats[e.cat]; });
       if (current.length) {

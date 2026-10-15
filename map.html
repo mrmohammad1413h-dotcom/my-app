@@ -35,15 +35,15 @@
   <main class="map-page">
     <aside class="map-panel" aria-label="أدوات الخريطة">
       <h1 style="font-size:1.45rem;margin-bottom:.2em">خريطة الوقائع</h1>
-      <p style="font-size:1rem;color:var(--ink-soft)">رحلة الشيخ محمد بن عبد الوهاب، والغزوات والوقائع في عهده، من مولده سنة ١١١٥هـ إلى وفاته سنة ١٢٠٦هـ.</p>
+      <p style="font-size:1rem;color:var(--ink-soft)">رحلة الشيخ محمد بن عبد الوهاب، والغزوات والوقائع في عهده من مولده سنة ١١١٥هـ إلى وفاته سنة ١٢٠٦هـ، ثم أخبار الأئمة من بعده إلى هدم الدرعية سنة ١٢٣٤هـ.</p>
 
       <div class="year-box">
         <div class="row">
           <button id="play" class="play-btn" type="button" aria-label="تشغيل">▶</button>
-          <output id="year-out" for="year">١٢٠٦هـ</output>
+          <output id="year-out" for="year">١٢٣٤هـ</output>
         </div>
-        <input id="year" type="range" min="1115" max="1206" value="1206" step="1" aria-label="السنة الهجرية">
-        <div style="display:flex;justify-content:space-between;font-size:.85rem;color:var(--ink-soft)"><span>١١١٥هـ</span><span>١٢٠٦هـ</span></div>
+        <input id="year" type="range" min="1115" max="1234" value="1234" step="1" aria-label="السنة الهجرية">
+        <div style="display:flex;justify-content:space-between;font-size:.85rem;color:var(--ink-soft)"><span>١١١٥هـ</span><span>١٢٣٤هـ</span></div>
       </div>
 
       <div class="filters" role="group" aria-label="تصفية حسب النوع">
@@ -51,6 +51,7 @@
         <button class="chip" data-cat="battle" aria-pressed="true" type="button"><span class="dot"></span>غزوات ووقائع</button>
         <button class="chip" data-cat="join" aria-pressed="true" type="button"><span class="dot"></span>دخول البلدان</button>
         <button class="chip" data-cat="state" aria-pressed="true" type="button"><span class="dot"></span>أحداث الدولة</button>
+        <button class="chip" data-cat="scholars" aria-pressed="true" type="button"><span class="dot"></span>أخبار الأئمة</button>
       </div>
 
       <ol id="event-list" class="event-list"></ol>
