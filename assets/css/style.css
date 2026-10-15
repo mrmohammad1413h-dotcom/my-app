@@ -338,3 +338,24 @@ sup.ref a { text-decoration: none; font-family: var(--font-head); font-size: .75
 .skip { position: absolute; right: -999px; }
 .skip:focus { right: 12px; top: 12px; z-index: 2000; background: #fff; padding: 6px 12px; }
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* ———— العنوان بالخط اليدوي ———— */
+.brand-callig { display: inline-flex; }
+.brand-callig img { height: 46px; width: auto; display: block; }
+.brand-callig .ink-light { display: none; }
+:root[data-theme="dark"] .brand-callig .ink-dark { display: none; }
+:root[data-theme="dark"] .brand-callig .ink-light { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand-callig .ink-dark { display: none; }
+  :root:not([data-theme="light"]) .brand-callig .ink-light { display: block; }
+}
+.hero-callig { margin: 0 0 .4em; line-height: 0; }
+.hero-callig img {
+  width: min(560px, 88vw); height: auto;
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .22));
+}
+/* واجهة أغمق في الوضع الليلي ليظهر الخط الأبيض */
+:root[data-theme="dark"] .hero { background: linear-gradient(180deg, #8b5e3c 0%, #4a2f1b 100%); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .hero { background: linear-gradient(180deg, #8b5e3c 0%, #4a2f1b 100%); }
+}
