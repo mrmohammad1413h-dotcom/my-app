@@ -33,7 +33,7 @@
     var cat = CATS[ev.cat], raid = ev.cat === "battle";
     var h = '<div class="hd">' +
       (raid ? '<span class="ico">' + SWORD + "</span>" : '<span class="ico plain" style="--c:' + cat.color + '"><i></i></span>') +
-      '<div><span class="sub">' + cat.label + " · " + yearLabel(ev) + " · " + ev.place + (ev.precise ? "" : " (الموضع تقريبي)") + "</span>" +
+      '<div><span class="sub">' + cat.label + " · " + yearLabel(ev) + " · " + ev.place + (ev.precise ? "" : ' <span class="apx">الموضع تقريبي</span>') + "</span>" +
       "<h2>" + ev.title + "</h2></div></div>";
     if (ev.leader) h += '<p class="ldr"><b>القائد: </b>' + ev.leader + "</p>";
     if (ev.result) h += '<p class="ldr"><b>النتيجة: </b>' + ev.result + "</p>";
@@ -47,7 +47,7 @@
   EVENTS.forEach(function (ev) {
     byId[ev.id] = ev;
     markers[ev.id] = L.marker([ev.lat, ev.lng], { icon: icon(ev), title: ev.title, keyboard: true })
-      .bindPopup("<h4>" + ev.title + "</h4>" + yearLabel(ev), { maxWidth: 260 })
+      .bindPopup("<h4>" + ev.title + "</h4>" + yearLabel(ev) + " · " + ev.place + (ev.precise ? "" : '<br><span class="apx">الموضع تقريبي</span>'), { maxWidth: 260 })
       .on("click", function () { select(ev.id, false); });
   });
 
@@ -91,7 +91,7 @@
     b.innerHTML = '<span class="y">' + A(ev.year) + 'هـ</span><span class="mk">' +
       (raid ? SWORD : '<i style="background:' + CATS[ev.cat].color + '"></i>') + "</span>" +
       '<span class="tx"><span class="tt">' + ev.title + '</span><span class="pl">' + ev.place +
-      (ev.leader ? " · القائد: " + ev.leader : "") + "</span></span>";
+      (ev.leader ? " · القائد: " + ev.leader : "") + (ev.precise ? "" : '<br><span class="apx">الموضع تقريبي</span>') + "</span></span>";
     b.addEventListener("click", function () { select(ev.id, true); });
     buttons[ev.id] = b;
     li.appendChild(b);

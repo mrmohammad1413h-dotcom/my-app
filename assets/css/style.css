@@ -402,6 +402,7 @@ sup.ref a:hover { background: var(--accent); color: #fff; }
 .map-main { flex: 999 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
 .map-aside { flex: 1 1 340px; min-width: 0; max-height: 1180px; overflow-y: auto; background: var(--card); border: 1px solid var(--line-2); border-radius: var(--radius); }
 #map { height: 560px; width: 100%; background: var(--sand); border: 1px solid var(--line-2); border-radius: var(--radius); }
+@media (max-width: 1000px) { .map-main { order: -1; } }
 @media (max-width: 640px) { #map { height: 60vh; } .map-aside { max-height: 70vh; } }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; font-family: var(--font-ui); }
 .chip {
@@ -445,6 +446,7 @@ sup.ref a:hover { background: var(--accent); color: #fff; }
 .event-list .tt { font-size: .95rem; font-weight: 700; line-height: 1.5; }
 .event-list .pl { font-family: var(--font-ui); font-size: .65rem; color: var(--ink-soft); line-height: 1.6; }
 .event-list .hidden { display: none; }
+.apx { display: inline-block; font-family: var(--font-ui); font-size: .6rem; line-height: 1.6; padding: 0 8px; border: 1px dashed var(--dune-3); border-radius: 3px; color: var(--link); background: var(--sand); white-space: nowrap; }
 
 .leaflet-container { font-family: var(--font-body) !important; }
 .leaflet-popup-content { font-size: .8rem; line-height: 1.7; direction: rtl; text-align: right; margin: 10px 12px; }
