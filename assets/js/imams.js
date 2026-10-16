@@ -4,7 +4,8 @@ window.GENERATIONS = {
   1: { label: "الجيل الأول", color: "#5a2e12" },
   2: { label: "الجيل الثاني", color: "#94541f" },
   3: { label: "الجيل الثالث", color: "#c27d3e" },
-  4: { label: "الجيل الرابع فمن بعده", color: "#6b7a3a" }
+  4: { label: "الجيل الرابع", color: "#6b7a3a" },
+  5: { label: "الجيل الخامس: تلاميذ الشيخ محمد بن إبراهيم", short: "الجيل الخامس", color: "#2f5d6b" }
 };
 
 window.IMAMS = [
@@ -20,9 +21,13 @@ window.IMAMS = [
   { file: "saad-ibn-atiq.html", name: "سعد بن حمد بن عتيق", short: "سعد بن عتيق", born: 1268, died: 1349, gen: 4, approx: true },
   { file: "sulayman-ibn-sahman.html", name: "سليمان بن سحمان", born: 1266, died: 1349, gen: 4, approx: true },
   { file: "ishaq-ibn-abdulrahman.html", name: "إسحاق بن عبد الرحمن", born: 1276, died: 1319, gen: 3 },
-  { file: "muhammad-ibn-ibrahim.html", name: "محمد بن إبراهيم آل الشيخ", born: 1311, died: 1389, gen: 4 }
+  { file: "muhammad-ibn-ibrahim.html", name: "محمد بن إبراهيم آل الشيخ", born: 1311, died: 1389, gen: 4 },
+  { file: "ibn-qasim.html", name: "عبد الرحمن بن محمد بن قاسم", short: "عبد الرحمن بن قاسم", born: 1312, died: 1392, gen: 5, approx: true },
+  { file: "ibn-humaid.html", name: "عبد الله بن محمد بن حميد", short: "عبد الله بن حميد", born: 1329, died: 1402, gen: 5 },
+  { file: "ibn-baz.html", name: "عبد العزيز بن عبد الله بن باز", short: "عبد العزيز بن باز", born: 1330, died: 1420, gen: 5 },
+  { file: "ibn-jibrin.html", name: "عبد الله بن عبد الرحمن بن جبرين", short: "عبد الله بن جبرين", born: 1349, died: 1430, gen: 5 }
 ];
 
 // المقياس المشترك للسلسلة
-window.CHAIN = { min: 1100, max: 1400, fall: 1233 };
+window.CHAIN = { min: 1100, max: 1440, fall: 1233 };
 window.arDigits = function (n) { return String(n).replace(/\d/g, function (d) { return "٠١٢٣٤٥٦٧٨٩"[d]; }); };

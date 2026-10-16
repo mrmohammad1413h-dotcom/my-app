@@ -6,7 +6,7 @@
   var box = document.getElementById("chain");
   if (box && window.IMAMS) {
     var pct = function (y) { return ((y - C.min) / (C.max - C.min)) * 100; };
-    var years = [1100, 1150, 1200, 1250, 1300, 1350, 1400];
+    var years = [1100, 1150, 1200, 1250, 1300, 1350, 1400, 1440];
     var grid = years.map(function (y) { return '<span class="chain-grid" style="right:' + pct(y) + '%"></span>'; }).join("");
     var h = '<div class="chain-row head"><span></span><div class="chain-ticks">' +
       years.map(function (y) { return '<span style="right:' + pct(y) + '%">' + A(y) + "هـ</span>"; }).join("") + "</div></div>";
@@ -17,7 +17,7 @@
       h += '<a class="chain-row chain-item" href="imams/' + m.file + '">' +
         '<span class="chain-born">' + (m.approx ? "~" : "") + A(m.born) + "</span>" +
         '<span class="chain-dot"><i class="' + (m.approx ? "approx" : "") + '" style="background:' + c + ";color:" + c + '"></i></span>' +
-        '<span class="chain-who"><span class="chain-name">' + (m.short || m.name) + '</span><span class="chain-meta">' + G[m.gen].label + " · " + label + "</span></span>" +
+        '<span class="chain-who"><span class="chain-name">' + (m.short || m.name) + '</span><span class="chain-meta">' + (G[m.gen].short || G[m.gen].label) + " · " + label + "</span></span>" +
         '<span class="chain-track">' + grid +
         '<span class="chain-bar' + (m.approx ? " approx" : "") + '" style="right:' + pct(m.born) + "%;width:" + (pct(m.died) - pct(m.born)) + "%;background:" + c + ";color:" + c + '"></span></span></a>';
     });
