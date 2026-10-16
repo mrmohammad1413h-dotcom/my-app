@@ -62,7 +62,7 @@
     d.innerHTML =
       '<span class="cap">موضعه في سلسلة الأئمة</span>' +
       '<div class="track" aria-hidden="true"><span class="base"></span>' +
-      '<span class="life" style="right:' + pct(m.born) + "%;width:" + (pct(m.died) - pct(m.born)) + "%;background:" + window.GENERATIONS[m.gen].color + '"></span>' +
+      '<span class="life" style="right:' + pct(m.born) + "%;width:" + (pct(window.lifeEnd(m)) - pct(m.born)) + "%;background:" + window.GENERATIONS[m.gen].color + '"' + (m.died ? "" : ' data-open="1"') + "></span>" +
       '<span class="fall" style="right:' + pct(C.fall) + '%"></span></div>' +
       '<div class="scale"><span>' + A(C.min) + "هـ</span><b>" + A(C.fall) + "هـ سقوط الدرعية</b><span>" + A(C.max) + "هـ</span></div>";
     hero.parentNode.insertBefore(d, hero.nextSibling);

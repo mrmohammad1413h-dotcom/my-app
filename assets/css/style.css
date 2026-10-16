@@ -228,6 +228,8 @@ p { margin: 0 0 1em; }
 .chain-grid { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--line-3); }
 .chain-bar { position: absolute; top: 17px; height: 14px; border-radius: 2px; }
 .chain-bar.approx { background: transparent !important; border: 2px dashed currentColor; }
+/* من لم تُعرف وفاته أو هو حيّ: يتلاشى الشريط نحو آخر المقياس */
+.chain-bar.open, .lineage .track .life[data-open] { -webkit-mask-image: linear-gradient(to left, #000 55%, transparent); mask-image: linear-gradient(to left, #000 55%, transparent); }
 .chain-fall { position: absolute; inset: 0; pointer-events: none; grid-template-rows: 100%; }
 .chain-fall > span { height: 100%; }
 .chain-fall > span > span { position: absolute; top: 0; bottom: 0; border-right: 2px dashed var(--accent); }

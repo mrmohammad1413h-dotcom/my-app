@@ -13,13 +13,14 @@
     h += '<div class="chain-list">';
     window.IMAMS.forEach(function (m) {
       var c = G[m.gen].color;
-      var label = (m.approx ? "نحو " : "") + A(m.born) + "–" + A(m.died) + "هـ" + (m.approxDeath ? " تقريباً" : "");
+      var label = m.died ? (m.approx ? "نحو " : "") + A(m.born) + "–" + A(m.died) + "هـ" + (m.approxDeath ? " تقريباً" : "")
+        : "وُلد " + A(m.born) + "هـ · " + (m.alive ? "حفظه الله" : "رحمه الله");
       h += '<a class="chain-row chain-item" href="imams/' + m.file + '">' +
         '<span class="chain-born">' + (m.approx ? "~" : "") + A(m.born) + "</span>" +
         '<span class="chain-dot"><i class="' + (m.approx ? "approx" : "") + '" style="background:' + c + ";color:" + c + '"></i></span>' +
         '<span class="chain-who"><span class="chain-name">' + (m.short || m.name) + '</span><span class="chain-meta">' + (G[m.gen].short || G[m.gen].label) + " · " + label + "</span></span>" +
         '<span class="chain-track">' + grid +
-        '<span class="chain-bar' + (m.approx ? " approx" : "") + '" style="right:' + pct(m.born) + "%;width:" + (pct(m.died) - pct(m.born)) + "%;background:" + c + ";color:" + c + '"></span></span></a>';
+        '<span class="chain-bar' + (m.approx ? " approx" : "") + (m.died ? "" : " open") + '" style="right:' + pct(m.born) + "%;width:" + (pct(window.lifeEnd(m)) - pct(m.born)) + "%;background:" + c + ";color:" + c + '"></span></span></a>';
     });
     h += '<div class="chain-fall chain-row"><span></span><span style="position:relative;display:block"><span style="right:' + pct(C.fall) + '%"></span></span></div>';
     h += "</div>";
