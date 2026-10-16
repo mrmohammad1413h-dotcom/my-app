@@ -106,6 +106,8 @@
     markers[id].openPopup();
     showPanel(ev);
     Object.keys(buttons).forEach(function (k) { buttons[k].classList.toggle("active", k === id); });
+    var aside = list.parentNode, li = buttons[id].parentNode;
+    if (aside.scrollHeight > aside.clientHeight) aside.scrollTop = li.offsetTop - aside.clientHeight / 3;
     if (fly && window.innerWidth < 860) document.getElementById("map").scrollIntoView({ behavior: "smooth" });
   }
 
