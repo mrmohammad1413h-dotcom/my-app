@@ -17,7 +17,7 @@ window.IMAMS = [
   { file: "abdullatif-ibn-abdulrahman.html", name: "عبد اللطيف بن عبد الرحمن", born: 1225, died: 1293, gen: 3 },
   { file: "hamad-ibn-atiq.html", name: "حمد بن عتيق", born: 1227, died: 1301, gen: 3 },
   { file: "abdullah-ibn-abdullatif.html", name: "عبد الله بن عبد اللطيف", born: 1265, died: 1339, gen: 4 },
-  { file: "sulayman-ibn-sahman.html", name: "سليمان بن سحمان", born: 1266, died: 1349, gen: 3, approx: true },
+  { file: "sulayman-ibn-sahman.html", name: "سليمان بن سحمان", born: 1266, died: 1349, gen: 4, approx: true },
   { file: "ishaq-ibn-abdulrahman.html", name: "إسحاق بن عبد الرحمن", born: 1276, died: 1319, gen: 3 },
   { file: "muhammad-ibn-ibrahim.html", name: "محمد بن إبراهيم آل الشيخ", born: 1311, died: 1389, gen: 4 }
 ];
