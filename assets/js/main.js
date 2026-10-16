@@ -1,4 +1,4 @@
-// تبديل الوضع الليلي، وقائمة الجوال، والحواشي الجانبية، وموضع الإمام في السلسلة
+// تبديل الوضع الليلي، وشريط التنقل في الهاتف، والحواشي الجانبية، وموضع الإمام في السلسلة
 (function () {
   var root = document.documentElement;
   try {
@@ -68,6 +68,50 @@
     hero.parentNode.insertBefore(d, hero.nextSibling);
   }
 
+  // شريط التنقل أسفل الشاشة في الهاتف: يُبنى من روابط القائمة الرئيسية نفسها
+  var TAB_ICONS = [
+    '<path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/>',
+    '<path d="M12 3l7 7-7 11-7-11z"/><path d="M12 8c1.5 2 2 3 2 4a2 2 0 0 1-4 0c0-1 .5-2 2-4z"/>',
+    '<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/>',
+    '<path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h10"/>'
+  ];
+  function tabbar() {
+    var links = document.querySelectorAll(".site-header .nav a");
+    if (!links.length) return;
+    var bar = document.createElement("nav");
+    bar.className = "tabbar";
+    bar.setAttribute("aria-label", "التنقل");
+    links.forEach(function (a, i) {
+      var t = document.createElement("a");
+      t.href = a.getAttribute("href");
+      if (a.getAttribute("aria-current")) t.setAttribute("aria-current", "page");
+      t.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">' + (TAB_ICONS[i] || "") + "</svg><span>" +
+        a.textContent.replace("خريطة الوقائع", "الخريطة") + "</span>";
+      bar.appendChild(t);
+    });
+    document.body.appendChild(bar);
+  }
+
+  // فهرس الترجمة في الشاشات الصغيرة: مطويّ، ويُفتح بالضغط
+  function tocToggle() {
+    var toc = document.querySelector(".toc");
+    var h = toc && toc.querySelector("h4");
+    if (!h) return;
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "toc-btn";
+    b.setAttribute("aria-expanded", "false");
+    b.innerHTML = "<span>" + h.textContent + "</span><i aria-hidden=\"true\">▾</i>";
+    h.parentNode.insertBefore(b, h);
+    b.addEventListener("click", function () {
+      var open = toc.classList.toggle("open");
+      b.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    toc.addEventListener("click", function (e) {
+      if (e.target.closest("ol a")) { toc.classList.remove("open"); b.setAttribute("aria-expanded", "false"); }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     var themeBtn = document.querySelector(".theme-toggle");
     if (themeBtn) {
@@ -90,6 +134,8 @@
       });
     }
 
+    tabbar();
+    tocToggle();
     lineage();
     sideNotes();
   });
