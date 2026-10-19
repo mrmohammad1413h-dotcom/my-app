@@ -515,3 +515,11 @@ sup.ref a:hover { background: var(--accent); color: #fff; }
   .filters::-webkit-scrollbar { display: none; }
   .chip { flex: none; }
 }
+
+/* ———— ديباجة الرئيسية ———— */
+.preface { padding-bottom: 20px; }
+.preface h2 { margin: 0 0 22px; }
+.preface-body { max-width: 820px; }
+.preface-body p { font-size: 1.12rem; line-height: 2.1; color: var(--ink-2); margin: 0 0 18px; text-align: justify; }
+.preface-body .opening { border-right: 3px solid var(--accent); padding-right: 18px; }
+.preface-body .closing { color: var(--accent); font-weight: 700; }

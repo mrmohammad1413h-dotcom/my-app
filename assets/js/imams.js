@@ -26,7 +26,7 @@ window.IMAMS = [
   { file: "ibn-qasim.html", name: "عبد الرحمن بن محمد بن قاسم", short: "عبد الرحمن بن قاسم", born: 1312, died: 1392, gen: 5, approx: true },
   { file: "ibn-humaid.html", name: "عبد الله بن محمد بن حميد", short: "عبد الله بن حميد", born: 1329, died: 1402, gen: 5 },
   { file: "ibn-baz.html", name: "عبد العزيز بن عبد الله بن باز", short: "عبد العزيز بن باز", born: 1330, died: 1420, gen: 5 },
-  { file: "al-luhaidan.html", name: "صالح بن محمد اللحيدان", short: "صالح اللحيدان", born: 1350, died: null, alive: false, gen: 5 },
+  { file: "al-luhaidan.html", name: "صالح بن محمد اللحيدان", short: "صالح اللحيدان", born: 1350, died: 1443, gen: 5 },
   { file: "ibn-jibrin.html", name: "عبد الله بن عبد الرحمن بن جبرين", short: "عبد الله بن جبرين", born: 1349, died: 1430, gen: 5 },
   { file: "al-fawzan.html", name: "صالح بن فوزان الفوزان", short: "صالح الفوزان", born: 1354, died: null, alive: true, gen: 5 }
 ];
