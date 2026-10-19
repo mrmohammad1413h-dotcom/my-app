@@ -31,6 +31,14 @@
     box.innerHTML = h;
   }
 
+  // ———— شريط الأرقام: يُحسب من بيانات الموقع نفسها ————
+  var setN = function (id, n) { var el = document.getElementById(id); if (el) el.textContent = A(n); };
+  setN("n-imams", document.querySelectorAll("#imams .imam-line").length);
+  if (window.EVENTS) {
+    setN("n-events", window.EVENTS.length);
+    setN("n-raids", window.EVENTS.filter(function (e) { return e.cat === "battle"; }).length);
+  }
+
   // ———— شريط الوقائع ————
   var strip = document.getElementById("raids");
   if (strip && window.EVENTS) {

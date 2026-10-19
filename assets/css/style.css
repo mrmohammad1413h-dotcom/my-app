@@ -523,3 +523,105 @@ sup.ref a:hover { background: var(--accent); color: #fff; }
 .preface-body p { font-size: 1.12rem; line-height: 2.1; color: var(--ink-2); margin: 0 0 18px; text-align: justify; }
 .preface-body .opening { border-right: 3px solid var(--accent); padding-right: 18px; }
 .preface-body .closing { color: var(--accent); font-weight: 700; }
+
+/* ———— الواجهة: السطر تحت العنوان، والمقدمة، وأفق الدرعية ———— */
+.dunes-hero .inner { padding-bottom: 300px; gap: 18px; }
+.dunes-hero .tagline { margin: -6px 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-family: var(--font-head); font-size: 1.15rem; font-weight: 700; line-height: 1.6; color: var(--ink); }
+.dunes-hero .tagline i { width: 10px; height: 10px; transform: rotate(45deg); background: var(--accent); flex: none; }
+.dunes-hero .lead { max-width: 690px; font-size: 1.3rem; line-height: 2; color: var(--ink); padding-right: 20px; border-right: 3px solid var(--dune-3); }
+.dunes-hero .sun { animation: sunGlow 7s ease-in-out infinite; }
+@keyframes sunGlow { 0%, 100% { box-shadow: 0 0 60px 12px rgba(236,201,143,.45); } 50% { box-shadow: 0 0 120px 46px rgba(236,201,143,.75); } }
+@media (prefers-reduced-motion: reduce) { .dunes-hero .sun { animation: none; } }
+.dunes { height: 300px; }
+.dunes .c-far { fill: #e2c595; } .dunes .c-near { fill: #b98250; } .dunes .c-mark { fill: #6e4122; }
+.btn-accent { background: #a3301f; color: #fbf4e6; }
+.btn-accent:hover { background: var(--mud); color: var(--on-mud); }
+@media (max-width: 640px) {
+  .dunes-hero .inner { padding-bottom: 160px; }
+  .dunes-hero .tagline { justify-content: center; font-size: 1rem; }
+  .dunes-hero .lead { font-size: 1.1rem; border-right: 0; padding-right: 0; }
+  .dunes { height: 150px; }
+}
+
+/* ———— شريط الأرقام ———— */
+.stats { background: var(--mud); color: var(--on-mud); }
+.stats-grid { padding: 34px 0 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px; }
+.stats-grid div { display: flex; flex-direction: column; gap: 2px; padding-right: 18px; border-right: 2px solid var(--mud-line); }
+.stats-grid b { font-family: var(--font-head); font-size: 2.2rem; font-weight: 800; line-height: 1.3; color: var(--gold); }
+.stats-grid span { font-family: var(--font-ui); font-size: .75rem; color: var(--on-mud-soft); }
+@media (max-width: 640px) { .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; padding: 24px 0; } .stats-grid b { font-size: 1.6rem; } }
+
+/* ———— مجلس المناظرة (الرئيسية) ———— */
+.debate-sec { background: var(--sand); }
+.debates { display: flex; flex-direction: column; gap: 28px; }
+.debate { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--line-2); border-radius: var(--radius); overflow: hidden; }
+.debate .q, .debate .a { padding: 30px 36px 26px; display: flex; flex-direction: column; gap: 10px; }
+.debate .q { background: var(--card); }
+.debate .a { background: var(--mud); color: #f6e6c6; padding-left: 36px; padding-right: 44px; }
+.debate .lbl { font-family: var(--font-head); font-size: .85rem; font-weight: 700; color: var(--accent); }
+.debate .a .lbl { color: var(--gold); }
+.debate p { margin: 0; font-size: 1.1rem; line-height: 2; }
+.debate .q p { color: var(--ink-2); }
+.debate .ctx { font-family: var(--font-ui); font-size: .72rem !important; line-height: 1.8 !important; color: var(--ink-soft) !important; }
+.debate .ayah { color: #f0d29a; }
+.debate .nowrap { white-space: nowrap; font-family: var(--font-ui); font-size: .7rem; color: #c9b597; }
+.debate .src { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--mud-line); font-family: var(--font-ui); font-size: .68rem; color: var(--gold); }
+.debate .n { position: absolute; top: 50%; left: 50%; width: 46px; height: 46px; transform: translate(-50%, -50%) rotate(45deg); background: var(--accent); box-shadow: 0 0 0 6px var(--sand); display: grid; place-items: center; }
+.debate .n b { transform: rotate(-45deg); font-family: var(--font-head); font-size: .9rem; color: #fbf4e6; }
+@media (max-width: 760px) {
+  .debate { grid-template-columns: 1fr; }
+  .debate .q, .debate .a { padding: 20px 18px; }
+  .debate .a { border-top: 5px solid var(--accent); }
+  .debate .n { display: none; }
+}
+
+/* ———— صفحة الشبهات: الواجهة، وعلامة الجواب، والخزانة ———— */
+.sh-hero { background: var(--mud); color: var(--on-mud); }
+.sh-hero .inner { padding: 56px 0 64px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-end; justify-content: space-between; }
+.sh-hero .txt { flex: 1 1 480px; }
+.sh-hero .kicker { color: var(--gold); }
+.sh-hero .kicker::before { background: var(--gold); }
+.sh-hero h1 { margin: 0 0 8px; font-size: 2.5rem; line-height: 1.4; color: var(--card); }
+.sh-hero .txt p:last-child { margin: 0; max-width: 620px; font-size: 1.1rem; color: var(--on-mud-soft); }
+.sh-hero figure { flex: 1 1 360px; max-width: 480px; margin: 0; padding: 22px 26px; background: var(--mud-2); border: 1px solid var(--mud-line); border-radius: var(--radius); }
+.sh-hero blockquote { margin: 0; font-size: 1.1rem; line-height: 1.9; color: #f6e6c6; }
+.sh-hero figcaption { margin-top: 10px; font-family: var(--font-ui); font-size: .68rem; color: #c9b597; }
+.sh-hero figcaption a { color: var(--gold); }
+
+.article .shubha { background: var(--card); border: 1px solid var(--line-2); border-radius: var(--radius); padding: 18px 22px; font-size: 1.1rem; line-height: 2; color: var(--ink-2); margin-bottom: 0; }
+.article .shubha strong { display: block; font-family: var(--font-head); font-size: .8rem; color: var(--accent); }
+.jawab-mark { display: flex; flex-direction: column; align-items: center; margin: 0 0 14px; }
+.jawab-mark::before { content: ""; width: 2px; height: 18px; background: var(--dune-3); }
+.jawab-mark span { font-family: var(--font-head); font-size: .75rem; font-weight: 700; color: var(--on-mud); background: var(--mud); padding: 4px 16px; border-radius: 4px; }
+
+.shelf-sec { padding: 24px 0 40px; }
+.shelf { display: flex; align-items: flex-end; gap: 12px; padding: 0 24px; min-height: 340px; border-bottom: 18px solid #6e4122; box-shadow: 0 10px 0 #4a2a14; overflow-x: auto; }
+.spine {
+  flex: none; display: flex; flex-direction: row-reverse; align-items: center; justify-content: center; gap: 6px;
+  width: 72px; padding: 18px 0; box-sizing: border-box; text-decoration: none; color: #fbf4e6; border-radius: 3px 3px 0 0;
+  box-shadow: inset 0 14px 0 rgba(255,255,255,.08), inset 0 -14px 0 rgba(0,0,0,.12), inset -5px 0 0 rgba(0,0,0,.15);
+  transition: transform .2s ease;
+}
+.spine:hover { color: #fff; transform: translateY(-10px); }
+.spine b, .spine span { writing-mode: vertical-rl; }
+.spine b { font-family: var(--font-head); font-size: .85rem; line-height: 1.4; }
+.spine span { font-family: var(--font-ui); font-size: .6rem; opacity: .85; }
+.spine.s1 { height: 300px; background: #6e3a17; } .spine.s2 { height: 280px; background: #a3301f; }
+.spine.s3 { height: 250px; background: #4c5a2c; } .spine.s4 { height: 320px; background: #94541f; }
+.spine.s5 { height: 310px; background: #3a2616; } .spine.s6 { height: 290px; background: #b5713a; }
+.spine.s7 { height: 270px; background: #2f5d6b; }
+@media (prefers-reduced-motion: reduce) { .spine { transition: none; } }
+
+/* الوضع الليلي: بيوت الطين في ليل الصحراء، ونوافذها مصابيح مضيئة */
+:root[data-theme="dark"] .dunes .c-far { fill: #1a2438; }
+:root[data-theme="dark"] .dunes .c-near { fill: #111a2c; }
+:root[data-theme="dark"] .dunes .c-mark { fill: #f2c766; }
+:root[data-theme="dark"] .debate .a { background: var(--card); color: var(--ink); }
+:root[data-theme="dark"] .spine.s5 { background: #2a3a5c; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .dunes .c-far { fill: #1a2438; }
+  :root:not([data-theme="light"]) .dunes .c-near { fill: #111a2c; }
+  :root:not([data-theme="light"]) .dunes .c-mark { fill: #f2c766; }
+  :root:not([data-theme="light"]) .debate .a { background: var(--card); color: var(--ink); }
+  :root:not([data-theme="light"]) .spine.s5 { background: #2a3a5c; }
+}
