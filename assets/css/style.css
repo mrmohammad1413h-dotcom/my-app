@@ -625,3 +625,12 @@ sup.ref a:hover { background: var(--accent); color: #fff; }
   :root:not([data-theme="light"]) .debate .a { background: var(--card); color: var(--ink); }
   :root:not([data-theme="light"]) .spine.s5 { background: #2a3a5c; }
 }
+
+/* خصوم الدعوة ومكتبة الدعوة */
+.more-link + .more-link { margin-right: 22px; }
+.foes { grid-template-columns: 1fr; }
+.foe h3 { display: flex; align-items: baseline; gap: 10px; }
+.foe h3 .num { font-family: var(--font-ui); font-size: .8rem; color: var(--gold); }
+.foe p { margin: 6px 0; }
+.traits { padding-right: 22px; line-height: 2; }
+.traits li { margin-bottom: 6px; }
