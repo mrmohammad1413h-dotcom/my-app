@@ -119,6 +119,7 @@ p { margin: 0 0 1em; }
 .nav a { font-size: .8rem; text-decoration: none; color: var(--on-mud); padding: 8px 16px; border-radius: 4px; }
 .nav a:hover { background: var(--mud-2); color: var(--gold); }
 .nav a[aria-current="page"] { background: var(--gold); color: var(--mud); font-weight: 600; }
+@media (max-width: 1100px) { .nav a { padding: 8px 9px; font-size: .74rem; } }
 .icon-btn {
   border: 1px solid var(--mud-line); background: transparent; color: var(--on-mud);
   border-radius: 4px; width: 44px; height: 44px; cursor: pointer; font-size: 1rem; display: inline-grid; place-items: center;
