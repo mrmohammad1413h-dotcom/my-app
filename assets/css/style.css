@@ -635,3 +635,4 @@ sup.ref a:hover { background: var(--accent); color: #fff; }
 .foe p { margin: 6px 0; }
 .traits { padding-right: 22px; line-height: 2; }
 .traits li { margin-bottom: 6px; }
+.article h3[id] { scroll-margin-top: 90px; }
