@@ -76,6 +76,7 @@
     '<path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
     '<path d="M20 4l-10 10M4 4l10 10M5 14l5 5M19 14l-5 5M7.5 16.5L4 20M16.5 16.5L20 20"/>',
     '<path d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l3.5-1 3 15-3.5 1z"/>',
+    '<path d="M12 4v16M8 20h8M5 7h14"/><path d="M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/>',
     '<path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h10"/>'
   ];
   function tabbar() {
@@ -89,7 +90,7 @@
       t.href = a.getAttribute("href");
       if (a.getAttribute("aria-current")) t.setAttribute("aria-current", "page");
       t.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">' + (TAB_ICONS[i] || "") + "</svg><span>" +
-        a.textContent.replace("خريطة الوقائع", "الخريطة").replace("شبهات وردود", "الردود").replace("خصوم الدعوة", "الخصوم").replace("مكتبة الدعوة", "المكتبة") + "</span>";
+        a.textContent.replace("خريطة الوقائع", "الخريطة").replace("شبهات وردود", "الردود").replace("خصوم الدعوة", "الخصوم").replace("مكتبة الدعوة", "المكتبة").replace("أبرز المسائل", "المسائل") + "</span>";
       bar.appendChild(t);
     });
     document.body.appendChild(bar);
