@@ -637,3 +637,10 @@ sup.ref a:hover { background: var(--accent); color: #fff; }
 .traits { padding-right: 22px; line-height: 2; }
 .traits li { margin-bottom: 6px; }
 .article h3[id] { scroll-margin-top: 90px; }
+
+/* جدول الموازنة في صفحة المسائل */
+.cmp { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: .95rem; background: var(--card); }
+.cmp th, .cmp td { border: 1px solid var(--line); padding: 8px 10px; text-align: right; vertical-align: top; }
+.cmp th { background: var(--mud); color: var(--on-mud); font-family: var(--font-head); font-weight: 600; }
+.cmp td:first-child { font-weight: 700; color: var(--ink-2); }
+@media (max-width: 600px) { .cmp { font-size: .82rem; } .cmp th, .cmp td { padding: 6px; } }
