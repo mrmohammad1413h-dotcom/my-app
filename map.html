@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>خريطة الوقائع — مصابيح الدجى</title>
+  <meta name="description" content="خريطة تفاعلية لرحلة الشيخ محمد بن عبد الوهاب والغزوات والوقائع في عهده وبعده، موثقة من المصادر الأصلية.">
+  <link rel="icon" href="assets/img/lamp.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Kufi+Arabic:wght@500;700;800&family=Readex+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js"></script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="sword" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 26C12 18 18 11 26 4"/><path d="M8.5 19.5l5 5"/><path d="M7 26l-2.5 2.5"/><path d="M6 5l15.5 16.5"/><path d="M21.5 21.5l5.5 3.5-1.6 3.4-5.6-4.2z" fill="currentColor"/><path d="M17.5 19.5l-1 3"/></g></symbol>
+  </svg>
+  <a class="skip" href="#map">تخطَّ إلى الخريطة</a>
+  <header class="site-header">
+    <div class="container bar">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/img/lamp.svg" alt="">
+        <span class="brand-callig"><img class="ink-dark" src="assets/img/title-dark.png" alt=""><img class="ink-light" src="assets/img/title-light.png" alt="مصابيح الدجى — أئمة الدعوة النجدية"></span>
+      </a>
+      <button class="icon-btn menu-btn" type="button" aria-label="القائمة" aria-expanded="false">☰</button>
+      <nav class="nav" aria-label="القائمة الرئيسية">
+        <a href="index.html">الرئيسية</a>
+        <a href="index.html#imams">الأئمة</a>
+        <a href="map.html" aria-current="page">خريطة الوقائع</a>
+        <a href="shubuhat.html">شبهات وردود</a>
+        <a href="khusum.html">خصوم الدعوة</a>
+        <a href="maktaba.html">مكتبة الدعوة</a>
+        <a href="masail.html">أبرز المسائل</a>
+        <a href="sources.html">المصادر</a>
+        <button class="icon-btn theme-toggle" type="button" aria-label="تبديل الوضع الليلي">☾</button>
+      </nav>
+    </div>
+  </header>
+  <div class="shurfat flip" aria-hidden="true"></div>
+
+  <main class="container map-wrap">
+    <div class="sec-head">
+      <div>
+        <p class="kicker" id="map-count">من ١١١٥ إلى ١٢٣٤هـ</p>
+        <h1 style="margin:0;font-size:2rem">خريطة الوقائع</h1>
+      </div>
+      <p class="aside">كل واقعة من «عنوان المجد» أو «تاريخ ابن غنام» برقم صفحتها، إلا خبر الوفد المغربي فمن «الاستقصا» للناصري. والغزوات معلّمة بالسيف والبندق، ويُذكر قائد كل غزوة كما في المصدر. الغزوات في عهد الشيخ قادها الإمام محمد بن سعود ثم ابنه عبد العزيز، والشيخ يأمر ويشير. والإطار المتقطع: موضع أو سنة تقريبية.</p>
+    </div>
+
+    <div class="filters" role="group" aria-label="تصفية حسب النوع" id="filters"></div>
+
+    <div class="map-cols">
+      <aside class="map-aside" aria-label="قائمة الوقائع">
+        <ol id="event-list" class="event-list"></ol>
+      </aside>
+      <div class="map-main">
+        <div id="map" role="region" aria-label="الخريطة"></div>
+        <div class="timebar">
+          <button id="play" class="play-btn" type="button" aria-label="تشغيل">▶</button>
+          <span>١١١٥هـ</span>
+          <input id="year" type="range" min="1115" max="1234" value="1234" step="1" aria-label="السنة الهجرية">
+          <span>١٢٣٤هـ</span>
+          <output id="year-out" for="year">١٢٣٤هـ</output>
+        </div>
+        <article class="ev-panel" id="ev-panel" aria-live="polite"></article>
+      </div>
+    </div>
+  </main>
+
+  <div class="sadu-band"></div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="copy">مصابيح الدجى — عمل علمي غير ربحي · <a href="index.html">الرئيسية</a> · <a href="sources.html">المصادر</a></div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="assets/js/events.js"></script>
+  <script src="assets/js/map.js"></script>
+</body>
+</html>
